@@ -1,0 +1,22 @@
+# Never commit real secrets or machine-local config
+settings.json
+settings.local.json
+.claude.json
+.env
+.env.*
+*.token
+*.key
+*.pem
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# Python scanner byproducts (from security skills)
+__pycache__/
+*.pyc
+.venv/
+venv/

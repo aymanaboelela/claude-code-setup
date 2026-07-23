@@ -1,10 +1,21 @@
-# Claude Code Setup
+<p align="center">
+  <img src="docs/assets/banner.svg" alt="Claude Code Setup — back up your skills, connections & config; restore any machine in minutes" width="100%">
+</p>
 
-> A portable, restorable [Claude Code](https://claude.ai/code) environment — **24 skills**, the MCP connections that power them, the plugin set, and a sanitized config template. Clone it onto any machine (or a brand-new account) and get the same setup back in a couple of minutes.
+<p align="center">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-6366f1.svg" alt="MIT License"></a>
+  <img src="https://img.shields.io/badge/skills-24-a855f7" alt="24 skills">
+  <img src="https://img.shields.io/badge/MCP%20connections-7-22d3ee" alt="7 MCP connections">
+  <img src="https://img.shields.io/badge/Claude%20Code-macOS%20·%20Linux%20·%20Windows-38bdf8" alt="Platform">
+  <img src="https://img.shields.io/github/last-commit/aymanaboelela/claude-code-setup?color=27c93f" alt="Last commit">
+  <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs welcome">
+</p>
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-![Skills](https://img.shields.io/badge/skills-24-brightgreen)
-![Platform](https://img.shields.io/badge/Claude%20Code-macOS%20%7C%20Linux%20%7C%20Windows-5A67D8)
+<p align="center">
+  <b>A portable, restorable <a href="https://claude.ai/code">Claude Code</a> environment.</b><br>
+  24 agent skills · the MCP connections that power them · the plugin set · a sanitized config template.<br>
+  Clone it onto any machine — or a brand-new account — and get the same setup back in a couple of minutes.
+</p>
 
 ---
 
@@ -12,15 +23,28 @@
 
 Claude Code skills, MCP connections, plugins, and settings normally live only in
 your local `~/.claude` folder. Reinstall your machine, switch accounts, or set up
-a second workstation and it's all gone. This repo is the backup: everything needed
-to reconstruct the environment, version-controlled and documented so **anyone**
-looking at it understands what each piece does.
+a second workstation and it's all gone. **This repo is the backup** — everything
+needed to reconstruct the environment, version-controlled and documented so
+anyone can understand what each piece does.
 
-It contains three things:
+```mermaid
+flowchart LR
+    R(("Claude Code<br/>Setup")):::root
+    R --> S["🔒 Mobile Security<br/><b>13 skills</b>"]:::sec
+    R --> F["📱 Flutter<br/><b>3 skills</b>"]:::flu
+    R --> W["⚙️ Workflow<br/><b>8 skills</b>"]:::wf
+    R --> C["🔌 MCP connections<br/><b>7 servers</b>"]:::mcp
+    R --> P["🧩 Plugins<br/><b>13 + 2 marketplaces</b>"]:::plg
+    R --> G["⚙️ Config template<br/><b>no secrets</b>"]:::cfg
 
-1. **Skills** — 24 ready-to-use agent skills (mobile security, Flutter, workflow).
-2. **Connections & plugins** — documented lists of every MCP server and plugin, with re-add commands.
-3. **Config** — a sanitized `settings.json` template (no secrets) to drop in and personalize.
+    classDef root fill:#6d28d9,stroke:#a855f7,color:#fff,stroke-width:2px;
+    classDef sec fill:#3b1230,stroke:#f472b6,color:#ffd9ec;
+    classDef flu fill:#0b2942,stroke:#38bdf8,color:#d6f2ff;
+    classDef wf  fill:#241748,stroke:#a78bfa,color:#e9defc;
+    classDef mcp fill:#08303a,stroke:#22d3ee,color:#d0fbff;
+    classDef plg fill:#1a1f42,stroke:#818cf8,color:#e0e4ff;
+    classDef cfg fill:#14213a,stroke:#64748b,color:#dbe4f0;
+```
 
 ---
 
@@ -45,11 +69,23 @@ cp config/settings.template.json ~/.claude/settings.json
 `./install.sh --force` overwrites existing skills of the same name;
 `./install.sh --link` symlinks them so edits sync back into this repo.
 
+### The full restore, at a glance
+
+```mermaid
+flowchart LR
+    A["📥 git clone"] --> B["⚡ ./install.sh<br/>skills → ~/.claude"]
+    B --> C["⚙️ settings.template.json<br/>→ settings.json"]
+    C --> D["🧩 install plugins<br/>PLUGINS.md"]
+    D --> E["🔌 reconnect MCP<br/>CONNECTIONS.md"]
+    E --> F(("✅ Ready")):::done
+    classDef done fill:#0f3d24,stroke:#27c93f,color:#c7ffd8,stroke-width:2px;
+```
+
 ---
 
 ## What's inside
 
-### Skills → [`docs/SKILLS.md`](docs/SKILLS.md)
+### 🧠 Skills → [`docs/SKILLS.md`](docs/SKILLS.md)
 
 | Family | Count | Highlights |
 |--------|:-----:|------------|
@@ -57,17 +93,32 @@ cp config/settings.template.json ~/.claude/settings.json
 | 📱 **Flutter / Mobile Dev** | 3 | Flutter test authoring, remote-config seasonal app icons + splash, and self-drawing SVG logo animations. |
 | ⚙️ **Workflow & Process** | 8 | TDD loop, skill authoring, session handoff, plan-grilling, PRD/issue generation, teaching, and a token-saving "caveman" mode. |
 
-### Connections → [`docs/CONNECTIONS.md`](docs/CONNECTIONS.md)
+### 🔌 Connections → [`docs/CONNECTIONS.md`](docs/CONNECTIONS.md)
 
-MCP servers that were wired up — `github`, `dart`, `supabase`, `context7`,
-`figma`, `talk-to-figma`, `ffmpeg-montage` — each with a copy-paste re-add command.
+The MCP servers that were wired up — each with a copy-paste re-add command.
 **No credentials are stored here**; you supply your own at connect time.
 
-### Plugins → [`docs/PLUGINS.md`](docs/PLUGINS.md)
+```mermaid
+flowchart TB
+    CC(("Claude Code")):::hub
+    CC --- GH["github<br/><i>repos · issues · PRs</i>"]:::n
+    CC --- DA["dart<br/><i>Flutter tooling</i>"]:::n
+    CC --- SB["supabase<br/><i>DB · migrations</i>"]:::n
+    CC --- C7["context7<br/><i>live docs</i>"]:::n
+    CC --- FG["figma<br/><i>Dev Mode</i>"]:::n
+    CC --- TF["talk-to-figma<br/><i>edit designs</i>"]:::n
+    CC --- FF["ffmpeg-montage<br/><i>video/audio</i>"]:::n
+
+    classDef hub fill:#6d28d9,stroke:#22d3ee,color:#fff,stroke-width:2px;
+    classDef n fill:#131c38,stroke:#5566b8,color:#dfe4fa;
+```
+
+### 🧩 Plugins → [`docs/PLUGINS.md`](docs/PLUGINS.md)
 
 13 plugins from the official `claude-plugins-official` marketplace and
 `cloudflare/skills` (superpowers, frontend-design, code-review, github, figma,
-vercel, stripe, firebase, cloudflare, and more), with one-line install commands.
+vercel, stripe, firebase, cloudflare, and more), each with a one-line install
+command.
 
 ---
 
@@ -83,7 +134,9 @@ claude-code-setup/
 ├── docs/
 │   ├── SKILLS.md                 ← full catalog of all 24 skills
 │   ├── CONNECTIONS.md            ← MCP servers + re-add commands
-│   └── PLUGINS.md                ← plugins + marketplaces + install commands
+│   ├── PLUGINS.md                ← plugins + marketplaces + install commands
+│   └── assets/
+│       └── banner.svg            ← the header art
 └── skills/                       ← the 24 skill folders (SKILL.md each)
     ├── auth-assessment/
     ├── caveman/
@@ -98,7 +151,7 @@ claude-code-setup/
 2. `git clone` this repo and run `./install.sh`.
 3. `cp config/settings.template.json ~/.claude/settings.json` and replace `CLAUDE_CODE_OAUTH_TOKEN` with your own.
 4. Add marketplaces and install plugins — [`docs/PLUGINS.md`](docs/PLUGINS.md).
-5. Reconnect MCP servers you use — [`docs/CONNECTIONS.md`](docs/CONNECTIONS.md).
+5. Reconnect the MCP servers you use — [`docs/CONNECTIONS.md`](docs/CONNECTIONS.md).
 6. Restart Claude Code. Run `/` to confirm the skills are listed.
 
 ---

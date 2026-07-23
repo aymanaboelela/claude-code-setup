@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="1200" height="360" font-family="'Segoe UI', system-ui, -apple-system, Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1020"/>
+      <stop offset="0.55" stop-color="#111a33"/>
+      <stop offset="1" stop-color="#0a0f1e"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#818cf8"/>
+      <stop offset="0.5" stop-color="#a855f7"/>
+      <stop offset="1" stop-color="#22d3ee"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6366f1" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#6366f1" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#22d3ee" stop-opacity="0.4"/>
+      <stop offset="1" stop-color="#22d3ee" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="360" rx="20" fill="url(#bg)"/>
+  <circle cx="215" cy="80" r="300" fill="url(#glow)"/>
+  <circle cx="1040" cy="300" r="280" fill="url(#glow2)"/>
+  <rect x="0" y="0" width="1200" height="4" rx="2" fill="url(#accent)" opacity="0.9"/>
+
+  <!-- LEFT: copy (x < 640) -->
+  <g transform="translate(72,80)">
+    <text x="0" y="0" fill="#8b93b8" font-size="15" font-weight="600" letter-spacing="4">PORTABLE  CLAUDE  CODE  ENVIRONMENT</text>
+    <text x="-2" y="62" fill="#ffffff" font-size="56" font-weight="800" letter-spacing="-1">Claude Code Setup</text>
+    <text x="0" y="104" fill="#c7cdec" font-size="21" font-weight="500">Back up your skills, connections &amp; config.</text>
+    <text x="0" y="132" fill="#7f88b0" font-size="16" font-weight="500">Restore any machine — or a new account — in minutes.</text>
+
+    <!-- family chips -->
+    <g transform="translate(0,164)" font-size="15" font-weight="600">
+      <g>
+        <rect x="0" y="0" width="192" height="40" rx="20" fill="#1b2444" stroke="#33407a" stroke-width="1"/>
+        <circle cx="24" cy="20" r="5" fill="#f472b6"/>
+        <text x="40" y="25" fill="#e6e9f7">Mobile Security · 13</text>
+      </g>
+      <g transform="translate(206,0)">
+        <rect x="0" y="0" width="132" height="40" rx="20" fill="#1b2444" stroke="#33407a" stroke-width="1"/>
+        <circle cx="22" cy="20" r="5" fill="#38bdf8"/>
+        <text x="38" y="25" fill="#e6e9f7">Flutter · 3</text>
+      </g>
+      <g transform="translate(352,0)">
+        <rect x="0" y="0" width="148" height="40" rx="20" fill="#1b2444" stroke="#33407a" stroke-width="1"/>
+        <circle cx="22" cy="20" r="5" fill="#a78bfa"/>
+        <text x="38" y="25" fill="#e6e9f7">Workflow · 8</text>
+      </g>
+    </g>
+
+    <!-- terminal pill -->
+    <g transform="translate(0,224)">
+      <rect x="0" y="0" width="520" height="46" rx="10" fill="#05070f" stroke="#2a3564" stroke-width="1"/>
+      <circle cx="20" cy="23" r="5" fill="#ff5f56"/>
+      <circle cx="38" cy="23" r="5" fill="#ffbd2e"/>
+      <circle cx="56" cy="23" r="5" fill="#27c93f"/>
+      <text x="80" y="29" fill="#9fe8b6" font-size="16" font-family="'SF Mono', Menlo, Consolas, monospace">git clone … &amp;&amp; ./install.sh</text>
+    </g>
+  </g>
+
+  <!-- RIGHT: stat tiles (x 720..1128) -->
+  <g transform="translate(720,80)">
+    <!-- tile 1 -->
+    <g transform="translate(0,0)">
+      <rect x="0" y="0" width="408" height="62" rx="12" fill="#131c38" stroke="#2b3563" stroke-width="1"/>
+      <text x="66" y="42" fill="#a5b4fc" font-size="34" font-weight="800" text-anchor="middle">24</text>
+      <text x="108" y="27" fill="#ffffff" font-size="16" font-weight="700">Agent skills</text>
+      <text x="108" y="47" fill="#7f88b0" font-size="13" font-weight="500">security · flutter · workflow</text>
+    </g>
+    <!-- tile 2 -->
+    <g transform="translate(0,78)">
+      <rect x="0" y="0" width="408" height="62" rx="12" fill="#131c38" stroke="#2b3563" stroke-width="1"/>
+      <text x="66" y="42" fill="#67e8f9" font-size="34" font-weight="800" text-anchor="middle">7</text>
+      <text x="108" y="27" fill="#ffffff" font-size="16" font-weight="700">MCP connections</text>
+      <text x="108" y="47" fill="#7f88b0" font-size="13" font-weight="500">github · dart · supabase · figma …</text>
+    </g>
+    <!-- tile 3 -->
+    <g transform="translate(0,156)">
+      <rect x="0" y="0" width="408" height="62" rx="12" fill="#131c38" stroke="#2b3563" stroke-width="1"/>
+      <text x="66" y="42" fill="#c4b5fd" font-size="34" font-weight="800" text-anchor="middle">13</text>
+      <text x="108" y="27" fill="#ffffff" font-size="16" font-weight="700">Plugins</text>
+      <text x="108" y="47" fill="#7f88b0" font-size="13" font-weight="500">from 2 marketplaces · one-command restore</text>
+    </g>
+  </g>
+</svg>

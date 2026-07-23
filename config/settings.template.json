@@ -1,0 +1,47 @@
+{
+  "model": "opus",
+  "theme": "dark",
+  "effortLevel": "xhigh",
+  "switchModelsOnFlag": true,
+  "skipAutoPermissionPrompt": true,
+
+  "includeCoAuthoredBy": false,
+
+  "env": {
+    "CLAUDE_CODE_OAUTH_TOKEN": "REPLACE_WITH_YOUR_OWN_TOKEN"
+  },
+
+  "enabledPlugins": {
+    "superpowers@claude-plugins-official": true,
+    "frontend-design@claude-plugins-official": true,
+    "code-review@claude-plugins-official": true,
+    "code-simplifier@claude-plugins-official": true,
+    "context7@claude-plugins-official": true,
+    "github@claude-plugins-official": true,
+    "security-guidance@claude-plugins-official": true,
+    "figma@claude-plugins-official": true,
+    "stripe@claude-plugins-official": true,
+    "vercel@claude-plugins-official": true,
+    "firebase@claude-plugins-official": true,
+    "chrome-devtools-mcp@claude-plugins-official": true,
+    "cloudflare@cloudflare": true
+  },
+
+  "extraKnownMarketplaces": {
+    "cloudflare": {
+      "source": {
+        "source": "github",
+        "repo": "cloudflare/skills"
+      }
+    }
+  },
+
+  "permissions": {
+    "defaultMode": "auto",
+    "allow": [
+      "Bash(git status)",
+      "Bash(git diff *)",
+      "Bash(flutter test *)"
+    ]
+  }
+}
